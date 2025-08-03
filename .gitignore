@@ -18,7 +18,7 @@ staticfiles/
 node_modules/
 dist/
 *.log
-
+pgdata_saas/
 # OS
 .DS_Store
 Thumbs.db
