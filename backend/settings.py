@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ['https://cf-frontrd-yj62.vercel.app', 'cf-frontrd-yj62.vercel.app', 'localhost', '127.0.0.1']
 # [ "http://localhost:5173", "localhost", "127.0.0.1:5173" ]
 
 
