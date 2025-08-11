@@ -1,0 +1,24 @@
+# Usamos una imagen base oficial de Python 3.11.12 slim
+FROM python:3.11.12-slim
+
+# Establecemos el directorio de trabajo
+WORKDIR /app
+
+# Copiamos el archivo de requerimientos
+COPY requirements.txt .
+
+# Instalamos las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiamos todo el código al contenedor
+COPY . .
+
+# Exponemos el puerto 8000
+EXPOSE 8000
+
+# Variables de entorno recomendadas
+ENV PYTHONUNBUFFERED=1
+ENV DJANGO_SETTINGS_MODULE=backend.settings
+
+# Comando para correr la app con Gunicorn
+CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
